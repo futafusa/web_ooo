@@ -4,14 +4,30 @@
     <meta charset="UTF-8" />
     <!-- <link rel="icon" type="image/svg+xml" href="favicon.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title><%= metaTitle %></title>
+    <meta name=”description” content=”<%= metaDescription %>” />
+    <meta property="og:url" content="<%= url %>">
+    <meta property="og:title" content="<%= metaTitle %>">
+    <meta property="og:description" content="<%= metaDescription %>">
+    <meta property="og:image" content="<%= url %><%= ogImagePath %>">
+    <meta property="og:type" content="<%= ogType %>">
+    <meta name="twitter:card" content="<%= ogTwitterCard %>">
     <link rel="stylesheet" href="./src/scss/style.scss">
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="./src/ts/main.ts"></script>
-    <div>
-      <img src="./src/images/test.jpg" alt="">
+    <div class="bg">
+      <div class="trajectory"></div>
     </div>
+    <header>
+      ヘッダー
+    </header>
+    <div class="content">
+      コンテント
+    </div>
+    <footer>
+      フッター
+    </footer>
+
+    <script type="module" src="./src/ts/main.ts"></script>
   </body>
 </html>

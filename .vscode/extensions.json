@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "digitalbrainstem.javascript-ejs-support",
+    "syler.sass-indented",
+    // "abusaidm.html-snippets",
+    "xabikos.javascriptsnippets"
+  ]
+}
