@@ -7,8 +7,13 @@
 // ---------------------------------------------------------------
 // common
 // ---------------------------------------------------------------
+$color_primary: #18141F;
+$color_secondary: #AA8A65;
+$color_text: #fff;
+
 body {
-  background-color: #000;
+  background-color: $color_primary;
+  color: $color_text;
 }
 header {
   @include S-M() {
@@ -22,12 +27,18 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: -1;
+}
+
+.bgCircular {
+  width: 100%;
+  height: 100%;
   transform: rotate(-20deg);
 
   .circle {
     width: 20px;
     height: 20px;
-    background-color: red;
+    background-color: $color_secondary;
     border-radius: 10px;
     position: absolute;
     top: 50%;
@@ -35,19 +46,20 @@ header {
   }
 
   .trajectory {
-    border: 1px solid #ccc;
-    width: 1000px;
-    height: 333px;
+    border: 1px dashed $color_secondary;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-left: -500px;
-    margin-top: -166px;
-    border-radius: 1000px / 333px;
   }
 }
 
-.content {
-  height: 3000px;
+header, footer, section {
+  height: 1000px;
 }
 
+.section {
+
+  &.active {
+    background-color: $color_secondary;
+  }
+}

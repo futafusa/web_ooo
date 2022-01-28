@@ -15,7 +15,7 @@ export default defineConfig({
     injectHtml({
       injectData: {
         url: 'https://xxxxxxx.com/',
-        metaTitle: 'meta-title',
+        metaTitle: 'Out of Orbit -10th Aniversary Editions-',
         metaDescription: 'meta-description',
         ogType: 'website',
         ogImagePath: 'assets/ogp.jpg',
