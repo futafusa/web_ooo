@@ -1,0 +1,53 @@
+// =============================================================================
+// 汎用クラス
+// =============================================================================
+// ---------------------------------------------------------------
+// Mediaqueries別改行
+// ---------------------------------------------------------------
+.br--xl {
+  display: none;
+
+  @include XL {
+    display: block;
+  }
+}
+
+.br--l {
+  display: none;
+
+  @include L {
+    display: block;
+  }
+}
+
+.br--m {
+  display: none;
+
+  @include M {
+    display: block;
+  }
+}
+
+.br--s {
+  display: none;
+
+  @include S {
+    display: block;
+  }
+}
+
+.br--pc {
+  display: none;
+
+  @include L-XL {
+    display: block;
+  }
+}
+
+.br--sp {
+  display: none;
+
+  @include S-M {
+    display: block;
+  }
+}

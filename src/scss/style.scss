@@ -1,8 +1,413 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import "node_modules/destyle.css/destyle";
+@import "./mediaqueries";
+@import "./easing";
+@import "./break";
+@import "./base";
+
+// ---------------------------------------------------------------
+// mainvisual
+// ---------------------------------------------------------------
+header {
+  height: 100vh;
+  background-image: linear-gradient($color_primary 50%, transparent);
+}
+.mainvisual {
+  background-image: url("../images/mainvisual.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  
+  @include S-L {
+    background-position: bottom center;
+    height: 90vh;
+    width: 90%;
+    margin-left: auto;
+  }
+  @include XL {
+    background-position: bottom center;
+    height: 100vh;
+    width: calc(1080px + (100% - 1240px)/2);
+    margin-left: calc((100% - 920px)/2);
+  }
+
+  @include S-L {
+    &::after {
+      content: "";
+      background-image: url("../images/icon_arrow.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 44px;
+      height: 11px;
+      position: absolute;
+      left: 50%;
+      bottom: -6.5%;
+      margin-left: -32px;
+    }
+  }
+}
+
+.mainvisualInfo {
+  position: absolute;
+
+  @include S-M {
+    top: 80px;
+    left: -20px;
+  }
+  @include L {
+    top: 20%;
+    left: -5%;
+  }
+  @include XL {
+    top: 20%;
+    left: -160px;
+  }
+}
+
+.mainvisualInfo__title {
+  font-weight: 700;
+  span {
+    display: block;
+    font-weight: 400;
+  }
+
+  @include S-M {
+    font-size: 40px;
+    span {
+      font-size: 18px;
+      margin-top: 12px;
+    }
+  }
+  @include L-XL {
+    font-size: 72px;
+    span {
+      font-size: 32px;
+      margin-top: 12px;
+    }
+  }
+}
+
+.mainvisualInfo__time {
+  padding-left: 4px;
+  @include S-M {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+  @include L-XL {
+    font-size: 32px;
+    margin-top: 40px;
+  }
+}
+
+
+// ---------------------------------------------------------------
+// Introduction
+// ---------------------------------------------------------------
+.introduction {
+  @include L-XL {
+    .section__inner {
+      padding-top: 160px;
+    } 
+  }
+  
+}
+
+.introductionContent__p {
+  margin-top: 32px;
+  font-weight: 400;
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @include S-M {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  @include L-XL {
+    font-size: 20px;
+    line-height: 2.0;
+  }
+}
+
+
+// ---------------------------------------------------------------
+// Tracklist
+// ---------------------------------------------------------------
+.tracklistContent {
+  @include L-XL {
+    position: relative;
+    height: 604px;
+  }
+}
+.tracklistContentList {
+  counter-reset: number 0;
+  width: 80%;
+
+  @include L {
+    width: 45%;
+  }
+  @include XL {
+    width: 447px;
+    margin-bottom: 32px;
+  }
+}
+
+.tracklistContentList__item {
+  text-align: right;
+  position: relative;
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @include S-M {
+    font-size: 16px;
+    margin-top: 16px;
+  }
+  @include L-XL {
+    font-size: 24px;
+    margin-top: 24px;
+  }
+
+  &::before {
+    counter-increment: number;
+    content: counter(number);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 1em;
+  }
+}
+
+.tracklistContent__jaketImage {
+  img {width: 100%}
+ 
+  @include S-M {
+    padding: 24px 0;
+  }
+  @include L {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 48%;
+  }
+  @include XL {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 604px;
+  }
+}
+
+.tracklistContent__listenMusic {
+  background-color: $color_secondary;
+  min-height: 200px; // 仮設定
+  @include L {
+    position: absolute;
+    bottom: 0;
+    left: 7%;
+    width: 41%;
+  }
+  @include XL {
+    width: 447px;
+    position: absolute;
+    bottom: 0;
+    left: 160px;
+  }
+}
+
+// ---------------------------------------------------------------
+// Editions
+// ---------------------------------------------------------------
+.edditionsContent {
+  @include L-XL {
+    display: flex;
+  }
+}
+.edditionsContent--main {
+  @include S-M {
+    margin-bottom: 40px;
+  }
+  @include L-XL {
+    display: flex;
+  }
+}
+.edditionsContent--sub {}
+
+.edditionsContent__image {
+  img { width: 100%; }
+  margin-bottom: 16px;
+  @include S-M {
+    width: 260px;
+  }
+  @include L-XL {
+    width: 272px;
+  }
+}
+.edditionsContentInfo {
+  @include L-XL {
+    padding-left: 32px;
+  }
+}
+.edditionsContentInfo__title {
+  font-weight: 700;
+
+  @include S-M {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  @include L-XL {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+.edditionsContentInfo__text {
+  span {
+    font-size: 12px;
+  }
+
+  @include S-M {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+  @include L-XL {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+}
+.edditionsContentInfo__notion {
+  font-size: 12px;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+// ---------------------------------------------------------------
+// nora store
+// ---------------------------------------------------------------
+.noraStoreContent__text {
+  @include S-M {
+    font-size: 14px;
+    line-height: 1.7;
+    width: 255px;
+    margin-bottom: 24px;
+  }
+  @include L-XL {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+}
+
+// ---------------------------------------------------------------
+// Credits
+// ---------------------------------------------------------------
+.creditsContent {
+  @include XL {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.creditsContentList {
+}
+.creditsContentListitem {
+ 
+
+  @include S-M {
+    font-size: 14px;
+    margin-top: 32px;
+  }
+  @include L-XL {
+    font-size: 16px;
+    margin-top: 48px;
+  }
+}
+.creditsContentListitem__title {
+  margin-bottom: 8px;
+}
+.creditsContentListitem__name {
+  position: relative;
+  padding-left: 3em;
+  &::before {
+    content: "";
+    display: block;
+    width: 2em;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 0;
+  }
+  @include L-XL {
+    margin-left: 4em;
+  }
+}
+
+// ---------------------------------------------------------------
+// SNS
+// ---------------------------------------------------------------
+.sns {
+  @include L-XL {
+    .section__inner {
+      padding-bottom: 160px;
+    }
+  }
+}
+
+.snsContentList {
+  display: flex;
+  justify-content: center;
+}
+.snsContentList__item {
+  a {
+    display: block;
+    width: 54px;
+    height: 54px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 54px;
+    margin: 0 16px;
+    border: 1px solid #fff;
+
+    @include L-XL {
+      &:hover {
+        background-color: $color_primary;
+      }
+    }
+  }
+}
+.snsContentLabel {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-size: 14px;
+ 
+
+  @include S-M {
+    margin-top: 24px;
+  }
+  @include L-XL {
+    margin-top: 40px;
+  }
+}
+
+// ---------------------------------------------------------------
+// フッター
+// ---------------------------------------------------------------
+footer {
+  background-color: $color_secondary;
+  padding: 24px 0 ;
+  address {
+    font-size: 12px;
+    text-align: center;
+  }
 }

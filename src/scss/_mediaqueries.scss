@@ -1,0 +1,111 @@
+// ==================================================
+// MediaQueries
+// ==================================================
+$breakpoints: (
+  pc: 1280px,
+  tablet: 769px,
+  mobile: 481px,
+);
+
+// ---------------------------------------------------------------
+// private
+// ---------------------------------------------------------------
+@mixin screen($bp-min, $bp-max) {
+  @media screen and (min-width: map-get($breakpoints, $bp-min)) and (max-width: map-get($breakpoints, $bp-max) - 1px) {
+    @content;
+  }
+}
+
+@mixin max-screen($bp) {
+  @media screen and (max-width: map-get($breakpoints, $bp) - 1px) {
+    @content;
+  }
+}
+
+@mixin min-screen($bp) {
+  //@debug "#{$bp}"
+  @media screen and (min-width: map-get($breakpoints, $bp)) {
+    @content;
+  }
+}
+
+// ---------------------------------------------------------------
+// public
+// ---------------------------------------------------------------
+@mixin S() {
+  @include max-screen(mobile) {
+    @content;
+  }
+}
+
+@mixin M() {
+  @include screen(mobile, tablet) {
+    @content;
+  }
+}
+
+@mixin L() {
+  @include screen(tablet, pc) {
+    @content;
+  }
+}
+
+@mixin XL() {
+  @include min-screen(pc) {
+    @content;
+  }
+}
+
+@mixin S-M() {
+  @include max-screen(tablet) {
+    @content;
+  }
+}
+
+@mixin M-L() {
+  @include screen(mobile, pc) {
+    @content;
+  }
+}
+
+@mixin L-XL() {
+  @include min-screen(tablet) {
+    @content;
+  }
+}
+
+@mixin S-L() {
+  @include max-screen(pc) {
+    @content;
+  }
+}
+
+@mixin M-XL() {
+  @include min-screen(mobile) {
+    @content;
+  }
+}
+
+@mixin MQ-UP($minBp) {
+  @if type-of($minBp) == number and $minBp > 0 {
+    @media screen and (min-width: #{$minBp}px) {
+      @content;
+    }
+  }
+}
+
+@mixin MQ-DOWN($maxBp) {
+  @if type-of($maxBp) == number and $maxBp > 0 {
+    @media screen and (max-width: #{$maxBp}px) {
+      @content;
+    }
+  }
+}
+
+@mixin MQ-BETWEEN($minBp, $maxBp) {
+  @if type-of($minBp) == number and type-of($maxBp) == number and $minBp < $maxBp {
+    @media screen and (min-width: #{$minBp}px) and (max-width: #{$maxBp}px) {
+      @content;
+    }
+  }
+}

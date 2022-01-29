@@ -1,0 +1,62 @@
+{
+  // PeacockColor
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#0055bf",
+    "activityBar.activeBackground": "#0055bf",
+    "activityBar.activeBorder": "#ff4095",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#ff4095",
+    "activityBarBadge.foreground": "#15202b",
+    "titleBar.activeBackground": "#003e8c",
+    "titleBar.inactiveBackground": "#003e8c99",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveForeground": "#e7e7e799",
+    "statusBar.background": "#003e8c",
+    "statusBarItem.hoverBackground": "#0055bf",
+    "statusBar.foreground": "#e7e7e7",
+    "sash.hoverBorder": "#0055bf",
+    "statusBarItem.remoteBackground": "#003e8c",
+    "statusBarItem.remoteForeground": "#e7e7e7"
+  },
+  // Set the default
+  "editor.formatOnSave": false,
+  // 拡張子と読み込みタイプの紐づけ
+  "files.associations": {
+      ".stylelintrc": "json",
+      ".eslintrc": "json",
+      ".postcssrc.js": "javascript",
+  },
+
+  // ↓↓↓ 自動整形を無効にする際は下記の記述を全て削除 ↓↓↓ ------
+
+  // -----------------------------------------------------------------
+  // html
+  // -----------------------------------------------------------------
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features",
+    // "editor.formatOnSave": true
+  },
+  // 末尾に改行を追加
+  "html.format.endWithNewline": true,
+  // "head, body, /html"前の空行を削除
+  "html.format.extraLiners": "",
+  // タグ間で許可する最大空行数
+  "html.format.maxPreserveNewLines": 2,
+  // 1行あたりの最大文字数を無効
+  "html.format.wrapLineLength": 0,
+  // -----------------------------------------------------------------
+  // VSCode側のlintersを無効化
+  // -----------------------------------------------------------------
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  // -----------------------------------------------------------------
+  // CSS,JSの自動整形を有効化
+  // -----------------------------------------------------------------
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true,
+    "source.fixAll.eslint": true
+  },
+  "peacock.color": "#003e8c"
+}
