@@ -13,6 +13,9 @@
     <meta property="og:type" content="<%= ogType %>">
     <meta name="twitter:card" content="<%= ogTwitterCard %>">
     <link rel="stylesheet" href="./src/scss/style.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="bg">
@@ -22,40 +25,193 @@
       </div>
     </div>
     <header>
-      <h1>Out of Orbit <span>-10th Aniversary Edition-</span></h1>
+      <div class="mainvisual">
+        <div class="mainvisualInfo">
+          <h1 class="mainvisualInfo__title">Out of Orbit<span>-10th Aniversary Edition-</span></h1>
+          <div class="mainvisualInfo__time">
+            02.19.2022
+          </div>
+        </div>
+      </div>
     </header>
     <section class="section introduction" id="introduction">
       <div class="section__inner">
-        <h2>Introduction</h2>
+        <h2 class="section__title">Introduction</h2>
+        <div class="introductionContent">
+          <p class="introductionContent__p">
+            2012年にオンライン・レーベル、<br class="br--sp">
+            ALTEMA RecordsよりリリースされたEP<br>
+            『Out of Orbit』は、日常を覆すほどの<br class="br--sp">
+            カタストロフを経験した<br class="br--pc">「私」の<br class="br--sp">
+            「以前」と「以後」を、<br class="br--sp">
+            衛星が周回軌道を外れ<br class="br--sp">
+            未知の領域に<br class="br--pc">放たれる姿になぞらえて<br class="br--sp">
+            描く作品として制作された。
+          </p>
+          <p class="introductionContent__p">
+            シャルロの代表作ともいえる本作が、<br class="br--sp">
+            リリースから10年を迎える2022年、<br>
+            音源、アートワークともにオリジナルの素材や<br class="br--sp">
+            プロジェクトファイルをリストアし、<br>
+            リミックス／リマスターを施した<br class="br--sp">
+            リニューアル仕様にて、<br>
+            アナログ盤とデジタル配信の<br class="br--sp">
+            2フォーマットでリリースされる。
+          </p>
+        </div>
       </div>
     </section>
     <section class="section tracklist" id="tracklist">
       <div class="section__inner">
-        <h2>Tracklist</h2>
+        <h2 class="section__title">Tracklist</h2>
+        <div class="tracklistContent">
+          <ol class="tracklistContentList">
+            <li class="tracklistContentList__item">ステラ</li>
+            <li class="tracklistContentList__item">街の灯</li>
+            <li class="tracklistContentList__item">interlude</li>
+            <li class="tracklistContentList__item">Out of Orbit</li>
+            <li class="tracklistContentList__item">星にねがいを</li>
+          </ol>
+          <div class="tracklistContent__jaketImage">
+            <img src="./src/images/img_jacket.jpg" alt="ジャケットデザイン">
+          </div>
+          <div class="tracklistContent__listenMusic">
+            サンクラ視聴
+          </div>
+        </div>
       </div>
     </section>
     <section class="section editions" id="editions">
       <div class="section__inner">
-        <h2>Editions</h2>
+        <h2 class="section__title">Editions</h2>
+        <div class="edditionsContent">
+          <div class="edditionsContent--main">
+            <div class="edditionsContent__image">
+              <img src="./src/images/img_edditions.jpg" alt="">
+            </div>
+            <div class="edditionsContentInfo">
+              <h3 class="edditionsContentInfo__title">Vinyl + Digital</h3>
+              <p class="edditionsContentInfo__text">
+                数量限定生産<br>
+                2022年リミックス＆リマスター音源<br>
+                180g重量盤<br>
+                アナログ用 96kHz/24bit マスターからの<br class="br--sp">
+                カッティング
+              </p>
+              <p class="edditionsContentInfo__notion">
+                ※制作工程の遅れにより、アナログ盤は商品入荷後の発送となります<br class="br--pc">（4月中旬予定）。
+              </p>
+              <div class="ooo__linkButton">
+                <a href="" target="_blank" rel="noopenner">Buy</a>
+              </div>
+            </div>
+          </div>
+          <div class="edditionsContent--sub">
+            <div class="edditionsContentInfo">
+              <h3 class="edditionsContentInfo__title">Digital</h3>
+              <p class="edditionsContentInfo__text">
+                2022年リミックス＆リマスター音源<br>
+                96kHz/24bitハイレゾマスター<span>（対象ストアのみ）</span>
+              </p>
+              <div class="ooo__linkButton">
+                <a href="" target="_blank" rel="noopenner">Listen / Download</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <section class="section noraStore" id="noraStore">
       <div class="section__inner">
-        <h2>nora store</h2>
+        <h2 class="section__title">nora store</h2>
+        <div class="noraStoreContent">
+          <p class="noraStoreContent__text">
+            レーベルロゴやアルバムジャケットをあしらった様々なグッズを、<br class="br--pc">
+            自由にカスタマイズしたうえでご購入いただけるウェブショップです。
+          </p>
+          <div class="ooo__linkButton">
+            <a href="" target="_blank" rel="noopenner">Go Store</a>
+          </div>
+        </div>
       </div>
     </section>
     <section class="section credits" id="credits">
       <div class="section__inner">
-        <h2>Credit</h2>
+        <h2 class="section__title">Credits</h2>
+        <div class="creditsContent">
+          <ul class="creditsContentList creditsContentList--music">
+            <li class="creditsContentListitem">
+              <div class="creditsContentListitem__title">All tracks written and Produced</div>
+              <div class="creditsContentListitem__name">Naoki Kōno</div>
+            </li>
+            <li class="creditsContentListitem">
+              <div class="creditsContentListitem__title">Track 5 vocals</div>
+              <div class="creditsContentListitem__name">Zabieru</div>
+            </li>
+            <li class="creditsContentListitem">
+              <div class="creditsContentListitem__title">All instruments, Programmed and Mixed</div>
+              <div class="creditsContentListitem__name">Naoki Kōno</div>
+            </li>
+            <li class="creditsContentListitem">
+              <div class="creditsContentListitem__title">Mastered</div>
+              <div class="creditsContentListitem__name">Reuben Ghose (Mojito Mastering)</div>
+            </li>
+          </ul>
+          <ul class="creditsContentList creditsContentList--others">
+            <li class="creditsContentListitem">
+              <div class="creditsContentListitem__title">Art direction and Design</div>
+              <div class="creditsContentListitem__name">tatsuhico SAKAI</div>
+            </li>
+            <li class="creditsContentListitem">
+              <div class="creditsContentListitem__title">Artwork</div>
+              <div class="creditsContentListitem__name">mugenmaru</div>
+            </li>
+            <li class="creditsContentListitem">
+              <div class="creditsContentListitem__title">Logo design</div>
+              <div class="creditsContentListitem__name">NONUMBERLESS</div>
+            </li>
+            <li class="creditsContentListitem">
+              <div class="creditsContentListitem__title">English translation</div>
+              <div class="creditsContentListitem__name">mejirō</div>
+            </li>
+          </ul>
+          <ul class="creditsContentList creditsContentList--label">
+            <li class="creditsContentListitem">
+              <div class="creditsContentListitem__title">Originally released</div>
+              <div class="creditsContentListitem__name">ALTEMA Records in 2012</div>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
     <section class="section sns" id="sns">
       <div class="section__inner">
-        <ul><li></li></ul>
+        <div class="snsContent">
+          <ul class="snsContentList">
+            <li class="snsContentList__item">
+              <a href="">
+                <img src="./src/images/icon_tw.svg" alt="">
+              </a>
+            </li>
+            <li class="snsContentList__item">
+              <a href="">
+                <img src="./src/images/icon_fb.svg" alt="">
+              </a>
+            </li>
+            <li class="snsContentList__item">
+              <a href="">
+                <img src="./src/images/icon_line.svg" alt="">
+              </a>
+            </li>
+          </ul>
+          <div class="snsContentLabel">
+            <a href="charlotontheweb.com" target="_blank" rel="noopenner">charlotontheweb.com</a>
+          </div>
+        </div>
       </div>
     </section>
     <footer>
-      フッター
+      <address>© 2022 nora recordings</address>
     </footer>
 
     <script type="module" src="./src/ts/main.ts"></script>
