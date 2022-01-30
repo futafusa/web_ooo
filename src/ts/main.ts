@@ -1,5 +1,4 @@
 import debounce from 'lodash/debounce';
-// import sample from './sample';
 
 window.addEventListener('DOMContentLoaded', () => {
   const elemBody = document.querySelector('body') as HTMLBodyElement;
@@ -36,10 +35,45 @@ window.addEventListener('DOMContentLoaded', () => {
   // 初期設定
   // ---------------------------------------------
   function init() {
+    // 画面サイズの初期化・イベント付け
     updateWindowSize();
     window.addEventListener('resize', debounce(() => {
       updateWindowSize();
     }, 300));
+
+    // asyncを使ってローディングの条件づけ
+    asyncLoading();
+  }
+
+  // Promiseの管理
+  async function asyncLoading(){
+    await windowLoading();
+    await waitMinimumTime();
+
+    //上記のawaitが完了後に実行
+    const elemLoading = document.getElementById('loading');
+    elemLoading?.classList.add('is-loaded');
+    elemBody.classList.remove('loading');
+  }
+
+  // Primise: window要素の読み込み
+  function windowLoading(): Promise<void> {
+    return new Promise((resolve) => {
+      window.addEventListener('load', () => {
+        resolve();
+        console.log('loading owatta');
+      });
+    })
+  }
+
+  // Primise: 最低待ち時間の設定（ロードが早く終わっても表示させておきたい時間）
+  function waitMinimumTime(): Promise<void> {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+        console.log('time owatta');
+      }, 1000);
+    })
   }
 
   // サイズまわりの更新
@@ -59,7 +93,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     // 惑星・軌跡サイズの調整
-    // elemCircle.setAttribute('style', `width: ${circleSize}px; height: ${circleSize}px`);
     elemTrajectory.setAttribute(
       'style',
       `
@@ -70,7 +103,6 @@ window.addEventListener('DOMContentLoaded', () => {
         border-radius: ${circularRadius*2}px / ${circularRadius*2/circularHeightRatio}px;
       `
     );
-    console.log(windowWidth, windowHeight);
   }
 
   // ---------------------------------------------
@@ -93,7 +125,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const targetScroll = document.documentElement.scrollTop;
     currentScroll = lerp(currentScroll, targetScroll, 0.1);
     scrollVector = lerp(currentScroll, targetScroll, 0.01);
-    // console.log(scrollVector);
   }
 
   // リープ関数
@@ -122,7 +153,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   function addClassForSection(domElement: Element){
-    // console.log(domElement.id);
     const intersectionTarget = document.getElementById(domElement.id);
     intersectionTarget?.classList.add('active');
   }

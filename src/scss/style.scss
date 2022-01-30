@@ -17,11 +17,17 @@ header {
   background-size: cover;
   position: relative;
   
-  @include S-L {
+  @include S-M {
     background-position: bottom center;
     height: 90vh;
     width: 90%;
     margin-left: auto;
+  }
+  @include L {
+    background-position: bottom center;
+    height: 100vh;
+    width: calc(768px + (100% - 768px)/2);
+    margin-left: calc((100% - 768px)/2);
   }
   @include XL {
     background-position: bottom center;
@@ -88,6 +94,7 @@ header {
 
 .mainvisualInfo__time {
   padding-left: 4px;
+  font-weight: 700;
   @include S-M {
     font-size: 24px;
     margin-top: 20px;
@@ -133,7 +140,7 @@ header {
 // Tracklist
 // ---------------------------------------------------------------
 .tracklistContent {
-  @include L-XL {
+  @include XL {
     position: relative;
     height: 604px;
   }
@@ -169,7 +176,7 @@ header {
 
   &::before {
     counter-increment: number;
-    content: counter(number);
+    content: counter(number)".";
     position: absolute;
     top: 0;
     left: 0;
@@ -183,7 +190,59 @@ header {
     background-color: #fff;
     position: absolute;
     top: 50%;
-    left: 1em;
+    left: 1.2em;
+  }
+
+  @include S-M {
+    &:nth-child(1)::after {
+      width: 71%;
+    }
+    &:nth-child(2)::after {
+      width: 71%;
+    }
+    &:nth-child(3)::after {
+      width: 61%;
+    }
+    &:nth-child(4)::after {
+      width: 52%;
+    }
+    &:nth-child(5)::after {
+      width: 52%;
+    }
+  }
+  @include L {
+    &:nth-child(1)::after {
+      width: 66%;
+    }
+    &:nth-child(2)::after {
+      width: 66%;
+    }
+    &:nth-child(3)::after {
+      width: 55%;
+    }
+    &:nth-child(4)::after {
+      width: 45%;
+    }
+    &:nth-child(5)::after {
+      width: 45%;
+    }
+  }
+  @include XL {
+    &:nth-child(1)::after {
+      width: 75%;
+    }
+    &:nth-child(2)::after {
+      width: 75%;
+    }
+    &:nth-child(3)::after {
+      width: 67%;
+    }
+    &:nth-child(4)::after {
+      width: 60%;
+    }
+    &:nth-child(5)::after {
+      width: 60%;
+    }
   }
 }
 
@@ -208,13 +267,14 @@ header {
 }
 
 .tracklistContent__listenMusic {
-  background-color: $color_secondary;
-  min-height: 200px; // 仮設定
+  // background-color: $color_secondary;
+  // min-height: 200px; // 仮設定
   @include L {
-    position: absolute;
-    bottom: 0;
-    left: 7%;
-    width: 41%;
+    // position: absolute;
+    // bottom: 0;
+    // left: 7%;
+    margin-top: 32px;
+    width: 45%;
   }
   @include XL {
     width: 447px;
@@ -379,6 +439,7 @@ header {
     border-radius: 54px;
     margin: 0 16px;
     border: 1px solid #fff;
+    transition: background-color 0.1s linear;
 
     @include L-XL {
       &:hover {
@@ -390,13 +451,21 @@ header {
 .snsContentLabel {
   text-align: center;
   font-size: 14px;
- 
+
+  a {
+    transition: opacity 0.1s linear;
+  }
 
   @include S-M {
     margin-top: 24px;
   }
   @include L-XL {
     margin-top: 40px;
+    a {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
   }
 }
 

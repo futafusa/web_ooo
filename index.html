@@ -17,7 +17,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body class="">
+    <div id="loading">
+      <div class="loading__logo">
+        <img src="./src/images/logo.png" alt="Out of Orbit">
+      </div>
+      <div class="loading__bar"></div>
+    </div>
     <div class="bg">
       <div class="bgCircular">
         <div class="circle"></div>
@@ -76,7 +82,7 @@
             <img src="./src/images/img_jacket.jpg" alt="ジャケットデザイン">
           </div>
           <div class="tracklistContent__listenMusic">
-            サンクラ視聴
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1179935410&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
           </div>
         </div>
       </div>
@@ -95,14 +101,13 @@
                 数量限定生産<br>
                 2022年リミックス＆リマスター音源<br>
                 180g重量盤<br>
-                アナログ用 96kHz/24bit マスターからの<br class="br--sp">
-                カッティング
+                アナログ用 96kHz/24bit マスターからの<br class="br--sp">カッティング
               </p>
               <p class="edditionsContentInfo__notion">
                 ※制作工程の遅れにより、アナログ盤は商品入荷後の発送となります<br class="br--pc">（4月中旬予定）。
               </p>
               <div class="ooo__linkButton">
-                <a href="" target="_blank" rel="noopenner">Buy</a>
+                <a href="https://charlotontheweb.bandcamp.com/album/out-of-orbit-10th-anniversary-edition" target="_blank" rel="noopenner">Buy</a>
               </div>
             </div>
           </div>
@@ -114,7 +119,7 @@
                 96kHz/24bitハイレゾマスター<span>（対象ストアのみ）</span>
               </p>
               <div class="ooo__linkButton">
-                <a href="" target="_blank" rel="noopenner">Listen / Download</a>
+                <a href="https://smarturl.it/charlot-OoO-10th" target="_blank" rel="noopenner">Listen / Download</a>
               </div>
             </div>
           </div>
@@ -130,7 +135,7 @@
             自由にカスタマイズしたうえでご購入いただけるウェブショップです。
           </p>
           <div class="ooo__linkButton">
-            <a href="" target="_blank" rel="noopenner">Go Store</a>
+            <a href="https://www.zazzle.co.jp/store/norarecordings" target="_blank" rel="noopenner">Go Store</a>
           </div>
         </div>
       </div>
@@ -141,7 +146,7 @@
         <div class="creditsContent">
           <ul class="creditsContentList creditsContentList--music">
             <li class="creditsContentListitem">
-              <div class="creditsContentListitem__title">All tracks written and Produced</div>
+              <div class="creditsContentListitem__title">All tracks written and produced</div>
               <div class="creditsContentListitem__name">Naoki Kōno</div>
             </li>
             <li class="creditsContentListitem">
@@ -149,7 +154,7 @@
               <div class="creditsContentListitem__name">Zabieru</div>
             </li>
             <li class="creditsContentListitem">
-              <div class="creditsContentListitem__title">All instruments, Programmed and Mixed</div>
+              <div class="creditsContentListitem__title">All instruments, programmed and mixed</div>
               <div class="creditsContentListitem__name">Naoki Kōno</div>
             </li>
             <li class="creditsContentListitem">
@@ -159,7 +164,7 @@
           </ul>
           <ul class="creditsContentList creditsContentList--others">
             <li class="creditsContentListitem">
-              <div class="creditsContentListitem__title">Art direction and Design</div>
+              <div class="creditsContentListitem__title">Art direction and design</div>
               <div class="creditsContentListitem__name">tatsuhico SAKAI</div>
             </li>
             <li class="creditsContentListitem">
@@ -189,23 +194,23 @@
         <div class="snsContent">
           <ul class="snsContentList">
             <li class="snsContentList__item">
-              <a href="">
-                <img src="./src/images/icon_tw.svg" alt="">
+              <a href="https://twitter.com/intent/tweet?text=<%= metaTitle %><%= url %>" target="_blank" rel="noopenner">
+                <img src="./src/images/icon_tw.svg" alt="twitter">
               </a>
             </li>
             <li class="snsContentList__item">
-              <a href="">
-                <img src="./src/images/icon_fb.svg" alt="">
+              <a href="https://www.facebook.com/share.php?u=<%= url %>" target="_blank" rel="noopenner">
+                <img src="./src/images/icon_fb.svg" alt="Facebook">
               </a>
             </li>
             <li class="snsContentList__item">
-              <a href="">
-                <img src="./src/images/icon_line.svg" alt="">
+              <a href="https://line.me/R/msg/text/?<%= url %>" target="_blank" rel="noopenner">
+                <img src="./src/images/icon_line.svg" alt="LINE">
               </a>
             </li>
           </ul>
           <div class="snsContentLabel">
-            <a href="charlotontheweb.com" target="_blank" rel="noopenner">charlotontheweb.com</a>
+            <a href="https://charlotontheweb.com/" target="_blank" rel="noopenner">charlotontheweb.com</a>
           </div>
         </div>
       </div>
