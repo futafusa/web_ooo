@@ -1,9 +1,11 @@
-import debounce from 'lodash/debounce';
+import throttle from 'lodash/throttle';
 
 window.addEventListener('DOMContentLoaded', () => {
   const elemBody = document.querySelector('body') as HTMLBodyElement;
+  const elemBg = document.querySelector('.bg') as HTMLDivElement;
   const elemCircle = document.querySelector('.circle') as HTMLDivElement;
   const elemTrajectory = document.querySelector('.trajectory') as HTMLDivElement;
+  const elemHeader = document.querySelector('.header') as HTMLElement;
   let windowWidth: number;
   let windowHeight: number;
   let bodyHeight: number;
@@ -16,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const optionIO = {
     root: null,
-    rootMargin: '-200px 0px',
+    rootMargin: '-300px 0px',
     threshold: 0,
   }
 
@@ -29,6 +31,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // 交差処理
   observingIntersection();
 
+
   //////////////////////////////////////////////////////////////////////////////////////
   //////////////////////////////////////////////////////////////////////////////////////
   // ---------------------------------------------
@@ -37,9 +40,9 @@ window.addEventListener('DOMContentLoaded', () => {
   function init() {
     // 画面サイズの初期化・イベント付け
     updateWindowSize();
-    window.addEventListener('resize', debounce(() => {
+    window.addEventListener('resize', throttle(() => {
       updateWindowSize();
-    }, 300));
+    }, 500));
 
     // asyncを使ってローディングの条件づけ
     asyncLoading();
@@ -56,22 +59,20 @@ window.addEventListener('DOMContentLoaded', () => {
     elemBody.classList.remove('loading');
   }
 
-  // Primise: window要素の読み込み
+  // Promise: window要素の読み込み
   function windowLoading(): Promise<void> {
     return new Promise((resolve) => {
       window.addEventListener('load', () => {
         resolve();
-        console.log('loading owatta');
       });
     })
   }
 
-  // Primise: 最低待ち時間の設定（ロードが早く終わっても表示させておきたい時間）
+  // Promise: 最低待ち時間の設定（ロードが早く終わっても表示させておきたい時間）
   function waitMinimumTime(): Promise<void> {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-        console.log('time owatta');
       }, 1000);
     })
   }
@@ -81,7 +82,7 @@ window.addEventListener('DOMContentLoaded', () => {
     windowWidth = window.innerWidth;
     windowHeight = window.innerHeight;
     bodyHeight = elemBody.scrollHeight;
-    
+
     if(windowWidth <= 768) {
       circularRadius = 180;
       // circleSize = 4;
@@ -91,6 +92,8 @@ window.addEventListener('DOMContentLoaded', () => {
     } else {
       circularRadius = 700;
     }
+
+    elemHeader.style.height = `${windowHeight}px`;
 
     // 惑星・軌跡サイズの調整
     elemTrajectory.setAttribute(
@@ -112,11 +115,11 @@ window.addEventListener('DOMContentLoaded', () => {
     updateScroll();
 
     const rad = currentScroll / (bodyHeight - windowHeight) * Math.PI*2 *2;
-    const x = Math.cos(rad) * circularRadius - circleSize/2;
-    const y = Math.sin(rad) * circularRadius/circularHeightRatio - circleSize/2;
+    const x = Math.cos(-rad) * circularRadius - circleSize/2;
+    const y = Math.sin(-rad) * circularRadius/circularHeightRatio - circleSize/2;
 
     elemCircle.setAttribute('style', `transform: translate(${x}px, ${y}px);`);
-    elemBody.style.backgroundPositionY = `${-scrollVector/40}px`;
+    elemBg.style.backgroundPositionY = `${-scrollVector/30}px`;
     requestAnimationFrame(circularMoving);
   }
 
