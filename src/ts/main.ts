@@ -50,8 +50,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Promiseの管理
   async function asyncLoading(){
-    await windowLoading();
-    await waitMinimumTime();
+    await Promise.all([windowLoading(), waitMinimumTime()]);
 
     //上記のawaitが完了後に実行
     const elemLoading = document.getElementById('loading');
