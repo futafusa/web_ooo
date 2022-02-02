@@ -18,7 +18,7 @@ export default defineConfig({
         metaTitle: 'Out of Orbit -10th Anniversary Editions-',
         metaDescription: 'シャルロの代表作ともいえる本作がリリースから10年を迎える2022年、音源、アートワークともにオリジナルの素材やプロジェクトファイルをリストアし、リミックス／リマスターを施したリニューアル仕様にて、アナログ盤とデジタル配信の2フォーマットでリリースされる。',
         ogType: 'website',
-        ogImagePath: 'assets/images/ogp.jpg',
+        ogImagePath: 'assets/ogp.jpg',
         ogTwitterCard : 'summary_large_image',
       }
     }),

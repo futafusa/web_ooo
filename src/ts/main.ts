@@ -56,6 +56,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const elemLoading = document.getElementById('loading');
     elemLoading?.classList.add('is-loaded');
     elemBody.classList.remove('loading');
+    bodyHeight = elemBody.scrollHeight;
   }
 
   // Promise: window要素の読み込み
