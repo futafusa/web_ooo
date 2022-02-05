@@ -46,8 +46,23 @@ header {
       height: 11px;
       position: absolute;
       left: 50%;
-      bottom: -6.5%;
+      bottom: -5.5%;
       margin-left: -32px;
+      animation: navArrow 1.4s infinite linear;
+    }
+
+    @keyframes navArrow {
+      0% {
+        transform: translateY(0);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(16px);
+        opacity: 0;
+      }
     }
   }
 }
